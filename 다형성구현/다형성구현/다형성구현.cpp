@@ -23,6 +23,17 @@ int main()
 	ShapeManager sm(100);		//최대 100개의 도형을 관리함
 	int choice;
 
+	//2. 도형들을 관리 클래스에 삽입함
+	sm.insert(new Triangle());
+	sm.insert(new Triangle(Point(0, 0), Point(1, 1), Point(2, 2)));
+	sm.insert(new Circle(Point(1.23, 4.56), 7.89));
+
+	for (int i = 0; i < 10; ++i)
+		sm.insert(new Rectangle(Point(i, i + 1), Point(i * 2, i * 3)));
+
+	//관리하고 있는 모든 도형을 그림
+	sm.draw();
+
 
 	do {
 		std::cout << "\n메뉴를 선택하세요:\n";
@@ -40,7 +51,7 @@ int main()
 			sm.insert(new Triangle());
 			break;
 		}
-		
+
 		case 2: {
 			double x1, y1, x2, y2;
 			std::cout << "사각형 좌표 입력 (왼쪽 위 x, y / 오른쪽 아래 x, y): ";
@@ -48,7 +59,7 @@ int main()
 			sm.insert(new Rectangle(Point(x1, y1), Point(x2, y2)));
 			break;
 		}
-			  
+
 		case 3: {
 			double cx, cy, radius;
 			std::cout << "원의 중심 좌표와 반지름 입력 (x, y, r): ";
@@ -70,15 +81,14 @@ int main()
 			std::cout << "잘못된 선택입니다. 다시 시도하세요.\n";
 			break;
 
-			 
+
 		}
 
 	} while (choice != 5);
+}
 
-
-	//관리하고 있는 모든 도형을 그림
-	sm.draw();
+	
 
 
 	// 이 프로그램에서 잘못된 점을 찾을 수 있는가?
-}
+
