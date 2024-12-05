@@ -7,7 +7,7 @@
 #include "circle.h"
 
 Circle::Circle()
-	:center{}, rad{ 0.0 } 
+	:center{}, rad{ 0.0 }
 {
 }
 

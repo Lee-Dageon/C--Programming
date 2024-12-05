@@ -22,6 +22,8 @@ int main()
 	//1. 관리 클래스를 만듦
 	ShapeManager sm(100);		//최대 100개의 도형을 관리함
 
+
+
 	//2. 도형들을 관리 클래스에 삽입함
 	sm.insert(new Triangle());
 	sm.insert(new Triangle(Point(0, 0), Point(1, 1), Point(2, 2)));
@@ -32,6 +34,7 @@ int main()
 
 	//관리하고 있는 모든 도형을 그림
 	sm.draw();
+
 
 	// 이 프로그램에서 잘못된 점을 찾을 수 있는가?
 }
